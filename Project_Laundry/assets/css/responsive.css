@@ -1,0 +1,356 @@
+/* Responsive Styles - Media queries and responsive design */
+
+/* Import Variables */
+@import url('variables.css');
+
+/* Breakpoints */
+/* xs: 0px and up */
+/* sm: 576px and up */
+/* md: 768px and up */
+/* lg: 992px and up */
+/* xl: 1200px and up */
+/* xxl: 1400px and up */
+
+/* Extra Small Devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+    .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+    
+    /* Typography adjustments */
+    h1 { font-size: var(--text-2xl); }
+    h2 { font-size: var(--text-xl); }
+    h3 { font-size: var(--text-lg); }
+    
+    /* Card adjustments */
+    .card {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .card-body {
+        padding: var(--spacing-md);
+    }
+    
+    /* Button adjustments */
+    .btn {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .btn-group .btn {
+        width: auto;
+        margin-bottom: 0;
+    }
+    
+    /* Navbar adjustments */
+    .navbar-brand {
+        font-size: var(--text-lg);
+    }
+    
+    /* Form adjustments */
+    .form-control {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    /* Table adjustments */
+    .table-responsive {
+        border: none;
+        box-shadow: none;
+    }
+    
+    .table {
+        font-size: var(--text-xs);
+    }
+    
+    .table th,
+    .table td {
+        padding: var(--spacing-xs);
+    }
+    
+    /* Hide less important columns on mobile */
+    .table .d-none-mobile {
+        display: none !important;
+    }
+    
+    /* Dashboard cards */
+    .dashboard-card {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .dashboard-card .card-body {
+        text-align: center;
+        padding: var(--spacing-lg);
+    }
+    
+    .dashboard-card i {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    /* Grid adjustments */
+    .row > .col-sm-6 {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    /* Card grid */
+    .card-columns {
+        column-count: 2;
+    }
+    
+    /* Form layout */
+    .form-row .col-sm-6 {
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    /* Navigation improvements */
+    .navbar-nav {
+        flex-direction: row;
+    }
+    
+    .navbar-nav .nav-link {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+    
+    /* Card grid */
+    .card-columns {
+        column-count: 2;
+    }
+    
+    /* Table improvements */
+    .table-responsive {
+        overflow-x: auto;
+    }
+    
+    /* Dashboard layout */
+    .dashboard-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    /* Card grid */
+    .card-columns {
+        column-count: 3;
+    }
+    
+    /* Dashboard layout */
+    .dashboard-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg);
+    }
+    
+    /* Sidebar layout */
+    .sidebar {
+        width: 250px;
+        position: fixed;
+        height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .main-content {
+        margin-left: 250px;
+    }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    /* Card grid */
+    .card-columns {
+        column-count: 4;
+    }
+    
+    /* Dashboard layout */
+    .dashboard-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-xl);
+    }
+    
+    /* Enhanced spacing */
+    .section-padding {
+        padding: var(--spacing-2xl) 0;
+    }
+}
+
+/* Extra Extra Large Devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    /* Enhanced layouts for very large screens */
+    .dashboard-stats {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* Landscape Orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+    /* Reduce vertical spacing in landscape mode */
+    .navbar {
+        padding-top: var(--spacing-xs);
+        padding-bottom: var(--spacing-xs);
+    }
+    
+    .container {
+        padding-top: var(--spacing-sm);
+        padding-bottom: var(--spacing-sm);
+    }
+    
+    .card {
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+/* Print Styles */
+@media print {
+    /* Hide navigation and interactive elements */
+    .navbar,
+    .btn,
+    .pagination,
+    .sidebar {
+        display: none !important;
+    }
+    
+    /* Optimize for print */
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .card {
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+    
+    .table {
+        border-collapse: collapse !important;
+    }
+    
+    .table th,
+    .table td {
+        border: 1px solid #ddd !important;
+        padding: 8px !important;
+    }
+    
+    /* Page breaks */
+    .page-break {
+        page-break-before: always;
+    }
+    
+    .no-break {
+        break-inside: avoid;
+    }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimize for high DPI displays */
+    .icon {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #3b82f6;
+        --primary-dark: #2563eb;
+        --primary-light: #60a5fa;
+        
+        --gray-50: #1f2937;
+        --gray-100: #374151;
+        --gray-200: #4b5563;
+        --gray-300: #6b7280;
+        --gray-400: #9ca3af;
+        --gray-500: #d1d5db;
+        --gray-600: #e5e7eb;
+        --gray-700: #f3f4f6;
+        --gray-800: #f9fafb;
+        --gray-900: #ffffff;
+        
+        --white: #1f2937;
+    }
+    
+    body {
+        background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+        color: var(--gray-700);
+    }
+    
+    .card {
+        background: var(--gray-100);
+        border-color: var(--gray-200);
+    }
+    
+    .table {
+        background: var(--gray-100);
+        color: var(--gray-700);
+    }
+    
+    .table th {
+        background: var(--gray-200);
+        color: var(--gray-800);
+    }
+}
+
+/* Container Queries (Future-proofing) */
+@container (min-width: 400px) {
+    .card-responsive {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+@container (min-width: 600px) {
+    .form-responsive {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+}
